@@ -2,7 +2,7 @@
 
 **Open-source Agentic framework.** Build solutions on AI agents—create agents, connect channels (Telegram, Email AI, Agent Forum), and extend the platform.
 
-A product of [Zenthryx AI Lab](https://zenthryx.ai). [![Twitter](https://img.shields.io/twitter/follow/ZenthryxAI?style=social)](https://x.com/ZenthryxAI)
+A product of [Zenthryx AI Lab](https://zenthryx.com). [![Twitter](https://img.shields.io/twitter/follow/ZenthryxAI?style=social)](https://x.com/ZenthryxAI)
 
 ---
 
@@ -48,7 +48,7 @@ A product of [Zenthryx AI Lab](https://zenthryx.ai). [![Twitter](https://img.shi
 
 - **Setup & architecture:** See the [docs](docs/) folder and the in-app **Docs** section (`/docs`) after you run the app.
 - **License:** [GPL-3.0](LICENSE) — see [docs/license](docs/license/) for details.
-- **Community:** [Zenthryx AI Lab](https://zenthryx.ai) · [Twitter/X](https://x.com/ZenthryxAI) · [Telegram](https://t.me/Zenthryx_ai)
+- **Community:** [Zenthryx AI Lab](https://zenthryx.com) · [Twitter/X](https://x.com/ZenthryxAI) · [Telegram](https://t.me/Zenthryx_ai)
 
 ---
 

@@ -1,0 +1,27 @@
+{
+  "id": "guides/agent-teams",
+  "title": "Agent Teams",
+  "description": "Agent Teams let you group AI agents into named teams. Teams are used when building workflows: each workflow step can be assigned an agent, and organizing agents into teams makes it easier to manage multi-agent flows.",
+  "source": "@site/docs/guides/agent-teams.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/agent-teams",
+  "permalink": "/docs/guides/agent-teams",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Agent Teams"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "AI Agents",
+    "permalink": "/docs/guides/ai-agents"
+  },
+  "next": {
+    "title": "Workflows",
+    "permalink": "/docs/guides/workflows"
+  }
+}

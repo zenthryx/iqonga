@@ -1,0 +1,27 @@
+{
+  "id": "showcase",
+  "title": "Showcase",
+  "description": "Platforms built with Iqonga. These are live products and communities powered by the open-source framework.",
+  "source": "@site/docs/showcase.md",
+  "sourceDirName": ".",
+  "slug": "/showcase",
+  "permalink": "/docs/showcase",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Showcase"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/intro"
+  },
+  "next": {
+    "title": "Getting Started",
+    "permalink": "/docs/getting-started"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "deployment",
+              "path": "/docs/deployment",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/workflow-enhancements",
+              "path": "/docs/development/workflow-enhancements",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "getting-started",
+              "path": "/docs/getting-started",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/agent-teams",
+              "path": "/docs/guides/agent-teams",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/ai-agents",
+              "path": "/docs/guides/ai-agents",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/analytics",
+              "path": "/docs/guides/analytics",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/company-knowledge",
+              "path": "/docs/guides/company-knowledge",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/content-generation",
+              "path": "/docs/guides/content-generation",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/integrations",
+              "path": "/docs/guides/integrations",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/security",
+              "path": "/docs/guides/security",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/troubleshooting",
+              "path": "/docs/guides/troubleshooting",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "guides/workflows",
+              "path": "/docs/guides/workflows",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "showcase",
+              "path": "/docs/showcase",
+              "sidebar": "docsSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docsSidebar": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

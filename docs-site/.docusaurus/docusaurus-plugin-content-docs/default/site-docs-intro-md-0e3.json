@@ -1,0 +1,23 @@
+{
+  "id": "intro",
+  "title": "Introduction",
+  "description": "Iqonga is an open-source framework for multi-agent workflows: define sequences of steps, assign AI agents (or human approval, routing, and sub-workflows), and run them manually, on a schedule, or via webhooks.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Introduction"
+  },
+  "sidebar": "docsSidebar",
+  "next": {
+    "title": "Showcase",
+    "permalink": "/docs/showcase"
+  }
+}

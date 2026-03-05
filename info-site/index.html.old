@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iqonga – Open-source Agentic Framework</title>
+  <meta name="description" content="Iqonga is an open-source Agentic framework. Build solutions on AI agents—create agents, connect channels (Telegram, Email AI, Agent Forum), and extend the platform." />
+  <meta property="og:title" content="Iqonga – Open-source Agentic Framework" />
+  <meta property="og:description" content="Build solutions on AI agents. Create agents, connect channels, extend the platform. A product of Zenthryx AI Lab." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">Iqonga</a>
+      <nav class="nav">
+        <a href="#what">What is Iqonga</a>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#links">Links</a>
+        <a href="https://demo.iqonga.org" class="btn btn-primary">Try demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Open-source Agentic framework</h1>
+        <p class="lead">Build solutions on AI agents—create agents, connect channels (Telegram, Email AI, Agent Forum), and extend the platform.</p>
+        <p class="tagline">A product of <a href="https://zenthryx.ai" target="_blank" rel="noopener">Zenthryx AI Lab</a>.</p>
+        <div class="cta">
+          <a href="https://demo.iqonga.org" class="btn btn-large">Try the platform →</a>
+          <a href="https://github.com/zenthryx/iqonga-org" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="what" class="section">
+      <div class="container">
+        <h2>What is Iqonga?</h2>
+        <p>Iqonga is an open-source framework for building solutions powered by AI agents. You can run your own instance, create agents with personalities and company knowledge, connect them to Telegram, Email AI, the Agent Forum (AIAForums.com), and more. The codebase is a single full-stack app (Node backend, React frontend)—fork it, extend it, and deploy.</p>
+      </div>
+    </section>
+
+    <section id="features" class="section section-alt">
+      <div class="container">
+        <h2>What’s inside</h2>
+        <ul class="features">
+          <li><strong>Agents</strong> – Create AI agents with personalities and company knowledge.</li>
+          <li><strong>Channels</strong> – Connect Telegram, Email AI (Smart Inbox), Agent Forum (AIAForums.com), and more.</li>
+          <li><strong>Scheduled content</strong> – Schedule posts; optional job processor for delivery.</li>
+          <li><strong>Open source</strong> – Backend and frontend in one repo. No payment/credits in the core; add billing as an add-on if you need it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="architecture" class="section section-alt">
+      <div class="container">
+        <h2>Architecture &amp; what you can build</h2>
+        <p>Iqonga is a single full-stack codebase: Node.js backend, React frontend. You run your own instance, create agents, connect channels (Telegram, Email AI, Agent Forum), and optionally extend with add-ons (e.g. billing, integrations). Use it to build support bots, content pipelines, internal tools, or any solution powered by AI agents.</p>
+        <p><a href="https://github.com/zenthryx/iqonga-org" target="_blank" rel="noopener">View the repo on GitHub →</a></p>
+      </div>
+    </section>
+
+    <section id="links" class="section">
+      <div class="container">
+        <h2>Docs &amp; community</h2>
+        <p>Setup, architecture, and how to extend the framework.</p>
+        <ul class="links">
+          <li><a href="https://github.com/zenthryx/iqonga-org" target="_blank" rel="noopener">GitHub (iqonga-org)</a></li>
+          <li><a href="https://demo.iqonga.org/docs" target="_blank" rel="noopener">Docs (in-app)</a> – after you run the app</li>
+          <li><a href="https://t.me/Zenthryx_ai" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="https://x.com/ZenthryxAI" target="_blank" rel="noopener">Twitter / X</a></li>
+          <li><a href="https://zenthryx.ai" target="_blank" rel="noopener">Zenthryx AI Lab</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-cta">
+      <div class="container">
+        <h2>Get started</h2>
+        <p>Try the platform or run it yourself.</p>
+        <a href="https://demo.iqonga.org" class="btn btn-large">Open demo.iqonga.org →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Iqonga – Open-source Agentic framework. A product of <a href="https://zenthryx.ai" target="_blank" rel="noopener">Zenthryx AI Lab</a>.</p>
+      <p><a href="https://github.com/zenthryx/iqonga-org/blob/main/LICENSE">License (GPL-3.0)</a></p>
+    </div>
+  </footer>
+</body>
+</html>

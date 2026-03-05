@@ -1,0 +1,128 @@
+/* eBook Editor Custom Styles */
+
+/* Image resizing in Quill editor */
+.ql-editor img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto;
+}
+
+.ql-editor img:hover {
+  outline: 2px solid #9333ea;
+  outline-offset: 2px;
+}
+
+/* Make images resizable */
+.ql-editor img[style*="width"] {
+  max-width: 100% !important;
+}
+
+.ql-editor img[style*="height"] {
+  height: auto !important;
+}
+
+/* Image alignment classes */
+.ql-editor img.ql-align-left {
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ql-editor img.ql-align-right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ql-editor img.ql-align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Page view styles */
+.ebook-page-view {
+  background: #f5f5f5;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ebook-page-view .page-content {
+  background: white;
+  padding: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  min-height: 600px;
+}
+
+.ebook-page-view .page-content h1,
+.ebook-page-view .page-content h2,
+.ebook-page-view .page-content h3,
+.ebook-page-view .page-content h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.ebook-page-view .page-content h1 {
+  font-size: 2rem;
+}
+
+.ebook-page-view .page-content h2 {
+  font-size: 1.5rem;
+}
+
+.ebook-page-view .page-content h3 {
+  font-size: 1.25rem;
+}
+
+.ebook-page-view .page-content p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.ebook-page-view .page-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  display: block;
+  border-radius: 4px;
+}
+
+.ebook-page-view .page-content video,
+.ebook-page-view .page-content iframe {
+  max-width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+/* Chapter view styles */
+.ebook-chapter-view {
+  background: #1a1a1a;
+  color: #e5e5e5;
+}
+
+/* Ensure editor has usable height and visibility */
+.ebook-editor {
+  min-height: 400px;
+}
+
+.ebook-editor .ql-container {
+  min-height: 360px;
+}
+
+.ebook-editor .ql-editor {
+  min-height: 340px;
+  color: #e5e5e5;
+}
+

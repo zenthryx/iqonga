@@ -1,0 +1,27 @@
+{
+  "id": "guides/security",
+  "title": "Security & Privacy",
+  "description": "Data protection",
+  "source": "@site/docs/guides/security.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/security",
+  "permalink": "/docs/guides/security",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8,
+    "title": "Security & Privacy"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Analytics & Performance",
+    "permalink": "/docs/guides/analytics"
+  },
+  "next": {
+    "title": "Troubleshooting",
+    "permalink": "/docs/guides/troubleshooting"
+  }
+}

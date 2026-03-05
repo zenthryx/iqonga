@@ -1,0 +1,27 @@
+{
+  "id": "guides/integrations",
+  "title": "Integrations",
+  "description": "Connect your AI agents to channels and tools.",
+  "source": "@site/docs/guides/integrations.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/integrations",
+  "permalink": "/docs/guides/integrations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "Integrations"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Content Generation",
+    "permalink": "/docs/guides/content-generation"
+  },
+  "next": {
+    "title": "Company Knowledge Base",
+    "permalink": "/docs/guides/company-knowledge"
+  }
+}

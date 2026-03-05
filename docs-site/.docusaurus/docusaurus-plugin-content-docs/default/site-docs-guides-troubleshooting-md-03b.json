@@ -1,0 +1,27 @@
+{
+  "id": "guides/troubleshooting",
+  "title": "Troubleshooting",
+  "description": "Common issues",
+  "source": "@site/docs/guides/troubleshooting.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/troubleshooting",
+  "permalink": "/docs/guides/troubleshooting",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "sidebar_position": 9,
+    "title": "Troubleshooting"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Security & Privacy",
+    "permalink": "/docs/guides/security"
+  },
+  "next": {
+    "title": "Deployment",
+    "permalink": "/docs/deployment"
+  }
+}

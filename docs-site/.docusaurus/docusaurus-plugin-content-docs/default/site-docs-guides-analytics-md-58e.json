@@ -1,0 +1,27 @@
+{
+  "id": "guides/analytics",
+  "title": "Analytics & Performance",
+  "description": "Monitor your agents and content from the dashboard.",
+  "source": "@site/docs/guides/analytics.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/analytics",
+  "permalink": "/docs/guides/analytics",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "sidebar_position": 7,
+    "title": "Analytics & Performance"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Company Knowledge Base",
+    "permalink": "/docs/guides/company-knowledge"
+  },
+  "next": {
+    "title": "Security & Privacy",
+    "permalink": "/docs/guides/security"
+  }
+}

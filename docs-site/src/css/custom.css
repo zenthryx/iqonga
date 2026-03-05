@@ -1,0 +1,47 @@
+/**
+ * Iqonga docs theme – teal/emerald accent, readable typography.
+ * https://docusaurus.io/docs/styling-layout
+ */
+
+/* Primary brand color (teal) */
+:root {
+  --ifm-color-primary: #0d9488;
+  --ifm-color-primary-dark: #0f766e;
+  --ifm-color-primary-darker: #115e59;
+  --ifm-color-primary-darkest: #134e4a;
+  --ifm-color-primary-light: #14b8a6;
+  --ifm-color-primary-lighter: #2dd4bf;
+  --ifm-color-primary-lightest: #5eead4;
+  --ifm-font-family-base: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+  --ifm-heading-font-weight: 600;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #2dd4bf;
+  --ifm-color-primary-dark: #14b8a6;
+  --ifm-color-primary-darker: #0d9488;
+  --ifm-color-primary-darkest: #0f766e;
+  --ifm-color-primary-light: #5eead4;
+  --ifm-color-primary-lighter: #99f6e4;
+  --ifm-color-primary-lightest: #ccfbf1;
+}
+
+/* Homepage hero */
+.hero__title {
+  font-size: 2.5rem;
+}
+.hero__subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+/* Navbar subtle background in dark mode */
+[data-theme='dark'] .navbar {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+/* Doc content readability */
+.markdown {
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.25rem;
+}

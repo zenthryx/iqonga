@@ -1,0 +1,27 @@
+{
+  "id": "guides/content-generation",
+  "title": "Content Generation",
+  "description": "Iqonga includes AI-powered content tools you can use from the dashboard and in workflows.",
+  "source": "@site/docs/guides/content-generation.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/content-generation",
+  "permalink": "/docs/guides/content-generation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Content Generation"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Workflows",
+    "permalink": "/docs/guides/workflows"
+  },
+  "next": {
+    "title": "Integrations",
+    "permalink": "/docs/guides/integrations"
+  }
+}

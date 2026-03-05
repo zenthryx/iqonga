@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment and secrets – never commit real .env
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+docs-site/build/
+*.tsbuildinfo
+
+# Logs and runtime
+logs/
+*.log
+npm-debug.log*
+
+# OS and IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Uploads and generated content (user data)
+backend/uploads/
+uploads/
+
+# Optional: keep .env.example and sample files (they have placeholders only)
+# .env.example
+# BackendEnv.sample.txt
+# FrontendEnv.sample.txt

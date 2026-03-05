@@ -1,0 +1,27 @@
+{
+  "id": "guides/ai-agents",
+  "title": "AI Agents",
+  "description": "Agent Personality Types",
+  "source": "@site/docs/guides/ai-agents.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/ai-agents",
+  "permalink": "/docs/guides/ai-agents",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "AI Agents"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/docs/getting-started"
+  },
+  "next": {
+    "title": "Agent Teams",
+    "permalink": "/docs/guides/agent-teams"
+  }
+}

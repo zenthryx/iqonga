@@ -1,0 +1,20 @@
+# Frontend environment – copy to .env or .env.local and set your values.
+# Never commit .env to Git (it can contain API URLs and keys).
+
+# API URL (required) – backend API base, e.g. http://localhost:3001/api or https://your-domain.com/api
+VITE_API_URL=http://localhost:3001/api
+
+# Optional: backend base URL for uploads (defaults derived from VITE_API_URL when possible)
+# VITE_BACKEND_URL=http://localhost:3001
+
+# Environment
+# VITE_ENVIRONMENT=development
+
+# Platform (optional – for meta and links)
+# REACT_APP_DOMAIN=your-domain.com
+# REACT_APP_PLATFORM_NAME=Iqonga
+
+# Analytics (optional)
+# REACT_APP_ENABLE_ANALYTICS=false
+# REACT_APP_DEBUG=false
+# VITE_GA_TRACKING_ID=G-XXXXXXXXXX

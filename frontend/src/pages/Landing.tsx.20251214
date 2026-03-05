@@ -1,0 +1,506 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import WalletConnection from '../components/WalletConnection';
+import { PrivyAuth } from '../components/PrivyAuth';
+import { useAuthStore } from '@/store/authStore';
+import { useLanguage } from '../contexts/LanguageContext';
+import { 
+  Bot, 
+  Globe, 
+  MessageSquare, 
+  Instagram, 
+  Twitter, 
+  Mic, 
+  Sparkles, 
+  BarChart3, 
+  Zap, 
+  CheckCircle, 
+  ArrowRight,
+  Play,
+  Download,
+  Key,
+  Headphones,
+  Volume2,
+  Users,
+  Heart,
+  Eye,
+  TrendingUp,
+  Plus,
+  MessageCircle
+} from 'lucide-react';
+
+const Landing: React.FC = () => {
+  const { isAuthenticated } = useAuthStore();
+  const { t, language } = useLanguage();
+  
+  // Translated state
+  const [translations, setTranslations] = useState<Record<string, string>>({});
+  const [platformsTranslated, setPlatformsTranslated] = useState<any[]>([]);
+  const [featuresTranslated, setFeaturesTranslated] = useState<any[]>([]);
+
+  const platformsBase = [
+    {
+      name: 'WordPress',
+      icon: <Globe className="h-8 w-8" />,
+      color: 'from-blue-500 to-blue-600',
+      description: 'AI Chat Widgets & Voice Chat',
+      features: ['Live Chat Widget', 'Voice Interactions', 'Multi-language Support', 'Custom Branding'],
+      status: 'Live'
+    },
+    {
+      name: 'Discord',
+      icon: <MessageSquare className="h-8 w-8" />,
+      color: 'from-indigo-500 to-indigo-600',
+      description: 'Server Bots & Learning AI',
+      features: ['Slash Commands', 'Channel Learning', 'Support Detection', 'Auto Responses'],
+      status: 'Live'
+    },
+    {
+      name: 'Instagram',
+      icon: <Instagram className="h-8 w-8" />,
+      color: 'from-pink-500 to-pink-600',
+      description: 'Business Account Publishing',
+      features: ['Auto Publishing', 'Content Scheduling', 'Analytics Tracking', 'Engagement Monitoring'],
+      status: 'Beta'
+    },
+    {
+      name: 'Twitter',
+      icon: <Twitter className="h-8 w-8" />,
+      color: 'from-sky-500 to-sky-600',
+      description: 'Automated Posting & Engagement',
+      features: ['Smart Scheduling', 'Trend Analysis', 'Hashtag Optimization', 'Engagement Tracking'],
+      status: 'Live'
+    }
+  ];
+
+  const featuresBase = [
+    {
+      icon: <MessageCircle className="h-12 w-12" />,
+      title: 'Platform Chat',
+      description: 'Real-time messaging, group chats, and team collaboration with privacy controls and file sharing.',
+      color: 'from-blue-500 to-blue-600',
+      features: ['Direct & group messaging', 'File attachments', 'Read receipts', 'Online status', 'Message search']
+    },
+    {
+      icon: <TrendingUp className="h-12 w-12" />,
+      title: 'Crypto Intelligence',
+      description: 'Real-time cryptocurrency market intelligence with sentiment analysis and trading signals from X/Twitter.',
+      color: 'from-yellow-500 to-yellow-600',
+      features: ['Sentiment analysis', 'Trading signals', 'Alert system', 'Content generation', 'Market monitoring']
+    },
+    {
+      icon: <Users className="h-12 w-12" />,
+      title: 'Influencer Discovery',
+      description: 'Find and connect with the right influencers for your brand with AI-powered matching and analytics.',
+      color: 'from-pink-500 to-pink-600',
+      features: ['AI-powered matching', 'Influencer analytics', 'Campaign tracking', 'Performance metrics']
+    },
+    {
+      icon: <Sparkles className="h-12 w-12" />,
+      title: 'Smart Ad Generator',
+      description: 'AI-driven ad creation with multi-platform support, brand integration, and advanced customization.',
+      color: 'from-orange-500 to-orange-600',
+      features: ['Multi-platform ads', 'Brand kit integration', 'Video generation', 'Product catalog', 'Ad previews']
+    },
+    {
+      icon: <BarChart3 className="h-12 w-12" />,
+      title: 'Smart Campaign Generator',
+      description: 'AI-driven campaign strategy, content calendar, and automated ad generation for comprehensive marketing.',
+      color: 'from-green-500 to-green-600',
+      features: ['Campaign strategy', 'Content calendar', 'Automated ads', 'Multi-platform', 'Performance tracking']
+    },
+    {
+      icon: <Bot className="h-12 w-12" />,
+      title: 'AI Agents',
+      description: 'Create unique AI agents with distinct personalities, traits, and expertise areas.',
+      color: 'from-purple-500 to-purple-600',
+      features: ['Custom personality types', 'Voice tone customization', 'Behavioral guidelines', 'Learning capabilities']
+    }
+  ];
+
+  // Load translations when language changes
+  useEffect(() => {
+    const loadTranslations = async () => {
+      if (language === 'en') {
+        setTranslations({});
+        setPlatformsTranslated(platformsBase);
+        setFeaturesTranslated(featuresBase);
+        return;
+      }
+
+      try {
+        // Collect ALL texts that need translation
+        const allTexts: string[] = [];
+        const textMap: Map<string, { type: string; index?: number; subIndex?: number }> = new Map();
+
+        // Hero texts
+        const heroTexts = [
+          'Multi-Platform AI Agent System',
+          'Deploy AI Agents',
+          'Everywhere',
+          'Create intelligent AI personalities that work across WordPress, Discord, Instagram, and Twitter. From voice chat widgets to automated social media management - all powered by advanced AI.',
+          'Go to Dashboard',
+          'Create Agent',
+          'Watch Demo',
+          'Multi-Platform Integration',
+          'Deploy your AI agents across all major platforms with seamless integration',
+          'Powerful AI Features',
+          'Everything you need to create, deploy, and manage intelligent AI agents',
+          'Platform Performance',
+          'Real-time metrics across all platforms',
+          'Active Users',
+          'Messages Processed',
+          'Satisfaction Rate',
+          'Growth Rate',
+          'Ready to Deploy Your AI Agents?',
+          'Join thousands of businesses already using Ajentrix AI to automate their customer interactions'
+        ];
+        
+        heroTexts.forEach(text => {
+          if (!allTexts.includes(text)) {
+            allTexts.push(text);
+            textMap.set(text, { type: 'hero' });
+          }
+        });
+
+        // Platform texts
+        platformsBase.forEach((platform, pIdx) => {
+          if (!allTexts.includes(platform.description)) {
+            allTexts.push(platform.description);
+            textMap.set(platform.description, { type: 'platform', index: pIdx, subIndex: 0 });
+          }
+          platform.features.forEach((feature, fIdx) => {
+            if (!allTexts.includes(feature)) {
+              allTexts.push(feature);
+              textMap.set(feature, { type: 'platform', index: pIdx, subIndex: fIdx + 1 });
+            }
+          });
+          if (!allTexts.includes(platform.status)) {
+            allTexts.push(platform.status);
+            textMap.set(platform.status, { type: 'platform', index: pIdx, subIndex: -1 });
+          }
+        });
+
+        // Feature texts
+        featuresBase.forEach((feature, fIdx) => {
+          if (!allTexts.includes(feature.title)) {
+            allTexts.push(feature.title);
+            textMap.set(feature.title, { type: 'feature', index: fIdx, subIndex: 0 });
+          }
+          if (!allTexts.includes(feature.description)) {
+            allTexts.push(feature.description);
+            textMap.set(feature.description, { type: 'feature', index: fIdx, subIndex: 1 });
+          }
+          feature.features.forEach((item, iIdx) => {
+            if (!allTexts.includes(item)) {
+              allTexts.push(item);
+              textMap.set(item, { type: 'feature', index: fIdx, subIndex: iIdx + 2 });
+            }
+          });
+        });
+
+        // Batch translate ALL texts at once using the translation service
+        const { translationService } = await import('../services/translationService');
+        const translatedTexts = await translationService.translateBatch(allTexts, language, 'Landing page content');
+
+        // Build translation map
+        const trans: Record<string, string> = {};
+        allTexts.forEach((text, i) => {
+          trans[text] = translatedTexts[i];
+        });
+
+        // Reconstruct platforms with translations
+        const platformsTrans = platformsBase.map((platform, pIdx) => {
+          const descTrans = trans[platform.description] || platform.description;
+          const featuresTrans = platform.features.map(f => trans[f] || f);
+          const statusTrans = trans[platform.status] || platform.status;
+          
+          return {
+            ...platform,
+            description: descTrans,
+            features: featuresTrans,
+            status: statusTrans
+          };
+        });
+
+        // Reconstruct features with translations
+        const featuresTrans = featuresBase.map((feature, fIdx) => {
+          const titleTrans = trans[feature.title] || feature.title;
+          const descTrans = trans[feature.description] || feature.description;
+          const featuresTrans = feature.features.map(f => trans[f] || f);
+          
+          return {
+            ...feature,
+            title: titleTrans,
+            description: descTrans,
+            features: featuresTrans
+          };
+        });
+
+        setTranslations(trans);
+        setPlatformsTranslated(platformsTrans);
+        setFeaturesTranslated(featuresTrans);
+      } catch (error) {
+        console.error('Translation error:', error);
+        // Fallback to English
+        setPlatformsTranslated(platformsBase);
+        setFeaturesTranslated(featuresBase);
+      }
+    };
+
+    loadTranslations();
+  }, [language, t]);
+
+  const platforms = platformsTranslated.length > 0 ? platformsTranslated : platformsBase;
+  const features = featuresTranslated.length > 0 ? featuresTranslated : featuresBase;
+
+  return (
+    <div className="min-h-screen bg-gray-900">
+      {/* Hero Section */}
+      <section className="relative py-20 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
+        {/* Floating AI Elements */}
+        <div className="absolute top-20 left-10 z-10 animate-pulse">
+          <img src="/ai-brain-icon.png" alt="AI Brain" className="w-16 h-16 opacity-60" />
+        </div>
+        <div className="absolute top-40 right-20 z-10 animate-bounce">
+          <img src="/robot-icon.png" alt="Robot" className="w-12 h-12 opacity-50" />
+        </div>
+        <div className="absolute bottom-32 left-1/4 z-10 animate-pulse">
+          <img src="/chat-bubble-icon.png" alt="Chat" className="w-14 h-14 opacity-40" />
+        </div>
+        <div className="absolute top-1/2 right-10 z-10 animate-pulse">
+          <img src="/sparkles-icon.png" alt="Sparkles" className="w-10 h-10 opacity-30" />
+        </div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <div className="mb-8">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+              <Sparkles className="h-4 w-4 text-yellow-400" />
+              <span className="text-sm text-white">
+                {translations['AI-Powered Marketing & Engagement Platform'] || 'AI-Powered Marketing & Engagement Platform'}
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              {translations['Transform Your Marketing'] || 'Transform Your Marketing'}
+              <span className="gradient-text block">{translations['With AI Intelligence'] || 'With AI Intelligence'}</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              {translations['The complete AI-powered platform for marketing automation, content creation, audience engagement, and campaign management. From crypto intelligence to influencer discovery, smart ads to platform chat - everything you need to grow your brand.'] || 
+               'The complete AI-powered platform for marketing automation, content creation, audience engagement, and campaign management. From crypto intelligence to influencer discovery, smart ads to platform chat - everything you need to grow your brand.'}
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            {isAuthenticated ? (
+              <>
+                <Link to="/dashboard" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+                  <Bot className="mr-2 h-5 w-5" />
+                  {translations['Go to Dashboard'] || 'Go to Dashboard'}
+                </Link>
+                <Link to="/agents/create" className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-200">
+                  <Plus className="mr-2 h-5 w-5" />
+                  {translations['Create Agent'] || 'Create Agent'}
+                </Link>
+              </>
+            ) : (
+              <>
+                <div className="flex flex-col items-center space-y-4">
+                  <PrivyAuth />
+                </div>
+                <button className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-200">
+                  <Play className="mr-2 h-5 w-5" />
+                  {translations['Watch Demo'] || 'Watch Demo'}
+                </button>
+              </>
+            )}
+          </div>
+
+          {/* Platform Icons */}
+          <div className="flex justify-center items-center space-x-8 opacity-60">
+            {platforms.map((platform) => (
+              <div key={platform.name} className="flex items-center space-x-2">
+                <div className={`w-12 h-12 bg-gradient-to-r ${platform.color} rounded-lg flex items-center justify-center text-white`}>
+                  {platform.icon}
+                </div>
+                <span className="text-sm text-gray-400">{platform.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Integration Section */}
+      <section className="py-20 px-6 bg-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              {translations['Multi-Platform Integration'] || 'Multi-Platform Integration'}
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              {translations['Deploy your AI agents across all major platforms with seamless integration'] || 
+               'Deploy your AI agents across all major platforms with seamless integration'}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {platforms.map((platform) => (
+              <div key={platform.name} className="glass-card p-8 hover:bg-white/10 transition-all duration-300 group relative overflow-hidden">
+                {/* Background Image */}
+                <div className="absolute inset-0 opacity-5">
+                  <img 
+                    src={`/${platform.name.toLowerCase()}-bg.png`} 
+                    alt={`${platform.name} background`} 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+                <div className="relative z-10">
+                  <div className="text-center mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${platform.color} rounded-xl flex items-center justify-center text-white mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                      {platform.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{platform.name}</h3>
+                    <p className="text-gray-400 text-sm mb-4">{platform.description}</p>
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${
+                      platform.status === 'Live' 
+                        ? 'bg-green-500/20 text-green-300' 
+                        : 'bg-yellow-500/20 text-yellow-300'
+                    }`}>
+                      {platform.status}
+                    </span>
+                  </div>
+                
+                <ul className="space-y-2">
+                  {platform.features.map((feature: string, index: number) => (
+                    <li key={index} className="flex items-center space-x-2 text-sm text-gray-300">
+                      <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              {translations['Powerful AI Features'] || 'Powerful AI Features'}
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              {translations['Everything you need to create, deploy, and manage intelligent AI agents'] || 
+               'Everything you need to create, deploy, and manage intelligent AI agents'}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {features.map((feature, index) => (
+              <div key={index} className="glass-card p-8 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start space-x-6">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center text-white flex-shrink-0`}>
+                    {feature.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-400 mb-4">{feature.description}</p>
+                    <ul className="space-y-2">
+                      {feature.features.map((item: string, idx: number) => (
+                        <li key={idx} className="flex items-center space-x-2 text-sm text-gray-300">
+                          <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-6 bg-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              {translations['Platform Performance'] || 'Platform Performance'}
+            </h2>
+            <p className="text-xl text-gray-400">
+              {translations['Real-time metrics across all platforms'] || 'Real-time metrics across all platforms'}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="glass-card p-8 text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
+                <Users className="h-8 w-8" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-2">100+</h3>
+              <p className="text-gray-400">{translations['Active Users'] || 'Active Users'}</p>
+            </div>
+            
+            <div className="glass-card p-8 text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
+                <MessageCircle className="h-8 w-8" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-2">50k+</h3>
+              <p className="text-gray-400">{translations['Messages Processed'] || 'Messages Processed'}</p>
+            </div>
+            
+            <div className="glass-card p-8 text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
+                <Heart className="h-8 w-8" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-2">95%</h3>
+              <p className="text-gray-400">{translations['Satisfaction Rate'] || 'Satisfaction Rate'}</p>
+            </div>
+            
+            <div className="glass-card p-8 text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
+                <TrendingUp className="h-8 w-8" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-2">300%</h3>
+              <p className="text-gray-400">{translations['Growth Rate'] || 'Growth Rate'}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="glass-card p-12">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              {translations['Ready to Deploy Your AI Agents?'] || 'Ready to Deploy Your AI Agents?'}
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              {translations['Join thousands of businesses already using Ajentrix AI to automate their customer interactions'] || 
+               'Join thousands of businesses already using Ajentrix AI to automate their customer interactions'}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {isAuthenticated ? (
+                <Link to="/dashboard" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+                  <Bot className="mr-2 h-5 w-5" />
+                  {translations['Go to Dashboard'] || 'Go to Dashboard'}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              ) : (
+                <div className="flex justify-center">
+                  <PrivyAuth />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default Landing;

@@ -1,0 +1,27 @@
+{
+  "id": "guides/workflows",
+  "title": "Workflows",
+  "description": "Workflows run a sequence of steps. Each step can be an agent (AI does the work), an approval (pause for human approve/reject), a router (branch by condition), or a sub-workflow (call another workflow). Steps run in order unless a router sends the flow elsewhere.",
+  "source": "@site/docs/guides/workflows.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/workflows",
+  "permalink": "/docs/guides/workflows",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Workflows"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Agent Teams",
+    "permalink": "/docs/guides/agent-teams"
+  },
+  "next": {
+    "title": "Content Generation",
+    "permalink": "/docs/guides/content-generation"
+  }
+}
