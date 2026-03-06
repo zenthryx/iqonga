@@ -1,6 +1,6 @@
 # Iqonga
 
-**Open-source Agentic framework.** Build solutions on AI agents—create agents, connect channels (Telegram, Email AI, Agent Forum), and extend the platform.
+**Open-source Agentic framework.** Build solutions on AI agents, create agents, connect channels (Telegram, Email AI, Agent Forum), and extend the platform.
 
 A product of [Zenthryx AI Lab](https://zenthryx.com). [![Twitter](https://img.shields.io/twitter/follow/ZenthryxAI?style=social)](https://x.com/ZenthryxAI)
 
