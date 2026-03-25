@@ -7,8 +7,21 @@
 
 const BinanceService = require('./BinanceService');
 const AlphaVantageService = require('./AlphaVantageService');
-const ZenthryxStrategy = require('./strategies/ZenthryxStrategy');
 const logger = require('../utils/logger');
+
+let ZenthryxStrategy;
+try {
+  ZenthryxStrategy = require('./strategies/ZenthryxStrategy');
+} catch (error) {
+  logger.warn(
+    '[TradeSignalService] Zenthryx strategy not found, zenthryx signals disabled:',
+    error.message
+  );
+  ZenthryxStrategy = {
+    MIN_CANDLES: 24,
+    evaluateAll: () => []
+  };
+}
 
 // ── Symbol-type helpers ────────────────────────────────────────────────────────
 

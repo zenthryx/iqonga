@@ -9,18 +9,18 @@ A product of [Zenthryx AI Lab](https://zenthryx.com). [![Twitter](https://img.sh
 ## Quick start
 
 1. **Clone or fork** this repo and open it in [Cursor](https://cursor.com) (or your IDE).
-2. **Backend:** Copy `backend/.env.example` to `backend/.env`, set `DATABASE_URL`, `JWT_SECRET`, and `FRONTEND_URL`. Then:
+2. **Backend:** Copy `backend/.env.example` to `backend/.env`, set `JWT_SECRET` and `FRONTEND_URL`. Then:
    ```bash
    cd backend && npm install && npm run dev
    ```
-   Backend runs on port 3001.
+   Backend runs on port 3001 and auto-starts a local PostgreSQL Docker container for development.
 3. **Frontend:** Copy `frontend/.env.example` to `frontend/.env`, set `VITE_API_URL=http://localhost:3001/api` and `VITE_BACKEND_URL=http://localhost:3001`. Then:
    ```bash
    cd frontend && npm install && npm run dev
    ```
    Open http://localhost:5173.
 
-**Database:** Create a PostgreSQL database and run migrations in `backend/database/migrations/` (see [docs](docs/) for full setup).
+**Database:** Development uses Docker automatically (`backend/docker-compose.dev.yml`). To stop it: `cd backend && npm run dev:db:down`.
 
 ---
 
