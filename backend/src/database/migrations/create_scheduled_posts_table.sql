@@ -1,12 +1,16 @@
 -- Create scheduled_posts table for scheduling agent posts
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
 CREATE TABLE IF NOT EXISTS scheduled_posts (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     agent_id UUID NOT NULL REFERENCES ai_agents(id) ON DELETE CASCADE,
-    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     platform VARCHAR(50) NOT NULL DEFAULT 'twitter',
     content_type VARCHAR(100) NOT NULL DEFAULT 'tweet',
     content_text TEXT,
     content_config JSONB, -- For storing generation parameters
+    media_urls TEXT[] DEFAULT '{}'::text[],
+    telegram_chat_id BIGINT,
     scheduled_time TIMESTAMP WITH TIME ZONE NOT NULL,
     timezone VARCHAR(50) DEFAULT 'UTC',
     frequency VARCHAR(50) DEFAULT 'once', -- once, daily, weekly, monthly
@@ -37,10 +41,19 @@ END;
 $$ language 'plpgsql';
 
 -- Create trigger to automatically update updated_at
-CREATE TRIGGER update_scheduled_posts_updated_at 
-    BEFORE UPDATE ON scheduled_posts 
-    FOR EACH ROW 
-    EXECUTE FUNCTION update_updated_at_column();
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_trigger
+        WHERE tgname = 'update_scheduled_posts_updated_at'
+    ) THEN
+        CREATE TRIGGER update_scheduled_posts_updated_at
+            BEFORE UPDATE ON scheduled_posts
+            FOR EACH ROW
+            EXECUTE FUNCTION update_updated_at_column();
+    END IF;
+END $$;
 
 -- Add comment
 COMMENT ON TABLE scheduled_posts IS 'Stores scheduled posts for AI agents across different platforms';
